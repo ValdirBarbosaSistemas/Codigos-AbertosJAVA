@@ -7,7 +7,7 @@ public class CarroFinal {
         System.out.println(c1);
 
         //Carro c2 = new Ferrari(); TAMBÉM PODE SE FAZER DESSE TIPO
-        Ferrari c2 = new Ferrari();
+        Ferrari c2 = new Ferrari(400);
         c2.acelerar();
         System.out.println(c2);
     }

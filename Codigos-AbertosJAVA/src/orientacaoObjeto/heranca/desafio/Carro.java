@@ -1,22 +1,33 @@
 package orientacaoObjeto.heranca.desafio;
 
 public class Carro {
-    int velocidadeAtual;
+	final int VELOCIDADE_MAXIMA;
+	int velocidadeAtual;
+	int delta = 5;
 
-    //Métodos
-    void acelerar() {
-        velocidadeAtual += 5;
-    }
+	// Construtor
+	Carro(int velocidadeMaxima) {
+		VELOCIDADE_MAXIMA = velocidadeMaxima;
+	}
 
-    void frear() {
-        if (velocidadeAtual >= 5) {
-            velocidadeAtual -= 5;
-        } else {
-            velocidadeAtual = 0;
-        }
-    }
+	// Métodos
+	void acelerar() {
+		if (velocidadeAtual + delta > VELOCIDADE_MAXIMA) {
+			velocidadeAtual = VELOCIDADE_MAXIMA;
+		} else {
+			velocidadeAtual += delta;
+		}
+	}
 
-    public String toString() {
-        return "A velocidade atual é: " + velocidadeAtual;
-    }
+	void frear() {
+		if (velocidadeAtual >= 5) {
+			velocidadeAtual -= 5;
+		} else {
+			velocidadeAtual = 0;
+		}
+	}
+
+	public String toString() {
+		return "A velocidade atual é: " + velocidadeAtual;
+	}
 }
