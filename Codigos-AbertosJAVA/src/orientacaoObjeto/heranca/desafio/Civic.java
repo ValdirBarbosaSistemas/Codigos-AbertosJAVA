@@ -4,7 +4,7 @@ public class Civic extends Carro {
 
 	// Construtor
 
-	Civic() {
+	public Civic() {
 		super(212);
 	}
 }

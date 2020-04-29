@@ -2,7 +2,7 @@ package orientacaoObjeto.heranca.desafio;
 
 public class Ferrari extends Carro {
 
-	Ferrari() {
+	public Ferrari() {
 		this(315);
 		/*
 		 * Seja mais interessante assim, pois desse modo voce pode ter outro tipo de
@@ -10,12 +10,12 @@ public class Ferrari extends Carro {
 		 */
 	}
 
-	Ferrari(int velocidadeMaxima) {
+	public Ferrari(int velocidadeMaxima) {
 		super(velocidadeMaxima);
 	}
 
 	@Override
-	void acelerar() {
+	public void acelerar() {
 		velocidadeAtual += 15;
 	}
 }
