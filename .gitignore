@@ -1,0 +1,7 @@
+#Arquivos que não irão para o GitHub
+bin/
+*.class
+*.classpath
+*.project
+*.metadata/
+Codigos-AbertosJAVA/src/estruturacontrole/DesafioWhile.class

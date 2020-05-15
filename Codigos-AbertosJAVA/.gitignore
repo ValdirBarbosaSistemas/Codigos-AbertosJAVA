@@ -1,1 +1,7 @@
-/.metadata/
+#Arquivos que serão ignorados pelo Git
+
+.metadata/
+.settings/
+*.class
+*.project
+*.classpath
