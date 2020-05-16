@@ -28,13 +28,13 @@ public class ImprimirObjetos {
         System.out.println("Modo Iterator...");
         Iterator<String> it = aprovados.iterator();
         while (it.hasNext()) { // Tem próximo? caso verdadeiro ele dá o próximo elemento
-            System.out.println(it.next()); //Me dê o próximo, caso não tenha ele sai do laço
+            System.out.println(it.next()); // Me dê o próximo, caso não tenha ele sai do laço
         }
 
-        //Modo com StreamAPI
+        // Modo com StreamAPI
 
         System.out.println("Modo StreamAPI...");
         Stream<String> st = aprovados.stream();
-        st.forEach(System.out::println);
+        st.forEach(System.out::println); // Laço interno ou operação interna
     }
 }
