@@ -28,7 +28,7 @@ public class ImprimirObjetos {
         System.out.println("Modo Iterator...");
         Iterator<String> it = aprovados.iterator();
         while (it.hasNext()) { // Tem próximo? caso verdadeiro ele dá o próximo elemento
-            System.out.println(it.next());
+            System.out.println(it.next()); //Me dê o próximo, caso não tenha ele sai do laço
         }
 
         //Modo com StreamAPI
