@@ -33,6 +33,11 @@ public class ImprimirObjetos {
 
         // Modo com StreamAPI
 
+        /*
+         * Uma stream também é uma Interface e também um conjunto de objetos. Algumas
+         * funcionalidades ocorre de forma interna, como por exemplo, percorrer uma
+         * variável, somar, etc.
+         */
         System.out.println("Modo StreamAPI...");
         Stream<String> st = aprovados.stream();
         st.forEach(System.out::println); // Laço interno ou operação interna
