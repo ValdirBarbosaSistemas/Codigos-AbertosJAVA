@@ -9,6 +9,13 @@ public class Map {
 	public static void main(String[] args) {
 		Consumer<String> print = System.out::print;
 
+		/*
+		 * O map no caso serve para 'mapear os elementos', ou seja, se temos uma stream
+		 * de 8 elementos ela irá fazer um mapeamento e irá retornar uma stream de 8
+		 * elementos. O Map recebe uma FUNCTION como Interface funcional. (VER A TABELA
+		 * DAS INTEFACES FUNCIONAIS PARA VER COMO FUNCIONA)
+		 */
+
 		List<String> marcas = Arrays.asList("bmw ", "Audi ", "Honda ");
 		// Imprimindo através do MAP todas as letras maiúsculas
 		marcas.stream().map(m -> m.toUpperCase()).forEach(print);
