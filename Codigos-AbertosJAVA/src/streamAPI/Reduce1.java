@@ -28,7 +28,9 @@ public class Reduce1 {
 		 * tipos primitivos também, basta colocar a palavra 'GET' que ele irá converter
 		 * para o tipo INTEGER, e com isso o reduce tem como parâmetro o modelo
 		 * 'OPTIONALINTEGER' que automaticamente ele irá gerar um valor inteiro através
-		 * do método get. Vejamos outro exemplo abaixo.
+		 * do método get. O Reduce recebe um BinaryOperator como interface funcional. 
+		 * (VER A TABELA DAS INTEFACES FUNCIONAIS PARA VER COMO FUNCIONA).Vejamos 
+		 * outro exemplo abaixo.
 		 */
 
 		Integer total2 = nums.stream().reduce(100, soma);
