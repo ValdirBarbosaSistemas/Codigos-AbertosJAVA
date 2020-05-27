@@ -3,8 +3,8 @@ package tratamentoDeErroeExcecao;
 public class Aluno {
 
 	// Atributos
-	final String nome;
-	final double nota;
+	public final String nome;
+	public final double nota;
 
 	// Construtor
 	public Aluno(String nomeAluno, double notaAluno) {
