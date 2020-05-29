@@ -21,6 +21,6 @@ public class NumeroForadoIntervaloException extends RuntimeException {
 	}
 	/*
 	 * Aqui ele tá querendo receber o nome do atributo e quando lançar a exceção,
-	 * mandar a mensagem de erro que está negativo.
+	 * mandar a mensagem de erro que está FORA DO INTERVALO.
 	 */
 }
