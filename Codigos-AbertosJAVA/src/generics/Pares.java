@@ -1,14 +1,17 @@
 package generics;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 public class Pares<C extends Number, V> {
-	private final SortedSet<Par> itens = new TreeSet<>();
+// Aqui ele meio que 'amarrou' a classe para que a chave só receber objetos do tipo NUMBER
+
+	private final Set<Par> itens = new HashSet<>();
 
 	public void adicionar(C chave, V valor) {
 		if (chave == null)
-			return;
+			return; // Ele vai sair do método só com o 'return'
 		Par<C, V> novoPar = new Par<C, V>(chave, valor);
 
 		if (itens.contains(novoPar)) {
@@ -16,5 +19,16 @@ public class Pares<C extends Number, V> {
 		}
 
 		itens.add(novoPar);
+	}
+
+	public V getValor(C chave) {
+		if (chave == null)
+			return null;
+		
+		Optional<Par<C, V>> parOpcional = itens.stream()
+				.filter(par -> chave.equals(par.getChave()))
+				.findFirst();
+
+		return parOpcional.isPresent() ? parOpcional.get().getValor() : null;
 	}
 }
