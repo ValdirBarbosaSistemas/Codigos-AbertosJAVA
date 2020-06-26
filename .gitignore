@@ -5,3 +5,7 @@ bin/
 *.project
 *.metadata/
 Codigos-AbertosJAVA/src/estruturacontrole/DesafioWhile.class
+nbproject/private/
+nbproject/
+*.xml
+*.mf
