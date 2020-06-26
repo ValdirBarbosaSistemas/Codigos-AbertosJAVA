@@ -7,7 +7,7 @@ import java.util.Set;
 public class Pares<C extends Number, V> {
 // Aqui ele meio que 'amarrou' a classe para que a chave só receber objetos do tipo NUMBER
 
-	private final Set<Par> itens = new HashSet<>();
+	private final Set<Par<C, V>> itens = new HashSet<>();
 
 	public void adicionar(C chave, V valor) {
 		if (chave == null)
@@ -24,7 +24,7 @@ public class Pares<C extends Number, V> {
 	public V getValor(C chave) {
 		if (chave == null)
 			return null;
-		
+
 		Optional<Par<C, V>> parOpcional = itens.stream()
 				.filter(par -> chave.equals(par.getChave()))
 				.findFirst();
