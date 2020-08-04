@@ -16,13 +16,19 @@ public class NovaPessoa {
 		 * chamado de 'sql injection'
 		 * 
 		 */
-		Connection conexao = FabricaConexao.getConexao();
+		Connection conexao = FabricaConexao.getConexao(); // Criando uma conexão
 
-		String sql = "INSERT INTO pessoas (nome) VALUES (?, ?)";
-		PreparedStatement stmt = conexao.prepareStatement(sql);
+		String sql = "INSERT INTO pessoas (nome) VALUES (?, ?)"; // Criando um comando sql
+		PreparedStatement stmt = conexao.prepareStatement(sql); // Forma segura de se receber os dados
 		stmt.setString(1, nome);
 		stmt.setInt(2, 10);
-		stmt.execute();
+		/*
+		 * Devido ao VALUES estar em (?, ?), que é uma forma segura de se inserir dados,
+		 * usamos o 'PreparedStatement' que é uma forma mais segura do 'Statement'. Pois
+		 * usando o statement ele ainda dá 'brecha' para algum tipo de invasão. Daí a
+		 * forma de se utilizar um método para setar o índice e o valor declarado.
+		 */
+		stmt.execute(); // Executando o sql
 		System.out.println("Pessoa incluída com sucesso!");
 		entrada.close();
 	}
