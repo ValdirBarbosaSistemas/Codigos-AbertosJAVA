@@ -30,6 +30,7 @@ public class NovaPessoa {
 		 */
 		stmt.execute(); // Executando o sql
 		System.out.println("Pessoa incluída com sucesso!");
+		stmt.close();
 		entrada.close();
 	}
 }
