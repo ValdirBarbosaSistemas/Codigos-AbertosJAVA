@@ -11,15 +11,21 @@ import java.util.Scanner;
 public class ConsultarPessoas2 {
 	public static void main(String[] args) throws SQLException {
 		Scanner entrada = new Scanner(System.in);
-		
+
 		Connection conexao = FabricaConexao.getConexao();
 		String sql = "SELECT * FROM pessoas WHERE nome LIKE ?";
+		/*
+		 * O 'like' serve para consultar partes de um trecho de frase, ou seja, 
+		 * %val% ele irá pegar um trecho que contenha a parte 'vald' 
+		 * Ma% caso queira pesquisar frase que COMEÇA com a palavra 'Ma' 
+		 * %al caso queira pesquisar frase que TERMINE com a palavra 'al'
+		 */
 
 		System.out.println("Informe o valor da pesquisa: ");
 		String valorNome = entrada.nextLine();
 
 		PreparedStatement stmt = conexao.prepareStatement(sql);
-		stmt.setString(1, "%" + valorNome + "%");
+		stmt.setString(1, "%" + valorNome + "%"); // Consultando um trecho da palavra
 		ResultSet resultado = stmt.executeQuery();
 
 		List<Pessoa> pessoas = new ArrayList<>();
