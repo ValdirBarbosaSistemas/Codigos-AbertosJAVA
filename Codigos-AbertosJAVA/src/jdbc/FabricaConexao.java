@@ -1,8 +1,10 @@
 package jdbc;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class FabricaConexao {
 	/*
@@ -12,12 +14,25 @@ public class FabricaConexao {
 	 */
 	public static Connection getConexao() {
 		try {
-			final String url = "jdbc:mysql://localhost/curso_java?verifyServerCertificate=false&useSSL=true";
-			final String usuario = "root";
-			final String senha = "V@ldir";
+			Properties prop = getProperties(); // Chamando o método properties
+			final String url = prop.getProperty("banco.url"); // Chamando a url criada no properties
+			final String usuario = prop.getProperty("banco.usuario"); // Chamando o usuario criado no properties
+			final String senha = prop.getProperty("banco.senha"); // Chamando a senha criada no properties
 			return DriverManager.getConnection(url, usuario, senha);
-		} catch (SQLException e) {
+		} catch (SQLException | IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	/*
+	 * O método abaixo serve justamente para executar os comandos que estão salvos
+	 * no arquivo 'conexao.properties' para não deixar aberto na classe
+	 * FabricaConexao.
+	 */
+	private static Properties getProperties() throws IOException {// Lançando o IOException para tratar o erro
+		Properties prop = new Properties(); // Criando a classe Properties
+		String caminho = "/jdbc/conexao.properties"; // Caminho do arquivo conexao.properties
+		prop.load(FabricaConexao.class.getResourceAsStream(caminho)); // Carregando o arquivo properties
+		return prop;
 	}
 }

@@ -1,3 +1,4 @@
+
 package jdbc;
 
 import java.sql.Connection;
@@ -14,7 +15,7 @@ public class AlterarPessoa {
 		int valorCodigo = entrada.nextInt();
 
 		Connection conexao = FabricaConexao.getConexao();
-		String sqlSelect = "SELECT * FROM pessoas WHERE codigo = ?";
+		String sqlSelect = "SELECT codigo, nome FROM pessoas WHERE codigo = ?";
 		String sqlUpdate = "UPDATE pessoas SET nome = ? WHERE codigo = ?";
 		PreparedStatement stmt = conexao.prepareStatement(sqlSelect);
 		stmt.setInt(1, valorCodigo);
