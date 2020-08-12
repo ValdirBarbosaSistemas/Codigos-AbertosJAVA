@@ -22,6 +22,10 @@ public class DAO {
 	// Método para incluir os dados no banco
 
 	public int incluir(String sql, Object... atributos) { // OBS: estudar (VAR ARG)
+		/*
+		 * (VAR ARG) = voce pode adicionar mais de um atributo se voce quiser,ou seja,
+		 * uma lista de atributos.
+		 */
 		try {
 			/*
 			 * Como o método é um 'int', eu quero retornar o id que foi gerado a partir
@@ -29,6 +33,8 @@ public class DAO {
 			 * 'PreparedStatement' que serve para retornar os id's gerados. Vê abaixo...
 			 */
 			PreparedStatement stmt = getConexao().prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
+			// Chamando o método que foi criado logo abaixo
 			adicionarAtributos(stmt, atributos);
 
 			if (stmt.executeUpdate() > 0) {
@@ -42,6 +48,20 @@ public class DAO {
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+		}
+	}
+
+	// Método para 'setar' cada um dos atributos que recebeu como parâmetro no
+	// método incluir
+	private void adicionarAtributos(PreparedStatement stmt, Object[] atributos) throws SQLException {
+		int indice = 1;
+		for (Object atributo : atributos) {
+			if (atributo instanceof String) {
+				stmt.setString(indice, (String) atributo);
+			} else if (atributo instanceof Integer) {
+				stmt.setInt(indice, (Integer) atributo);
+			}
+			indice++;
 		}
 	}
 
@@ -61,17 +81,15 @@ public class DAO {
 		return conexao;
 	}
 
-	// Método para 'setar' cada um dos atributos que recebeu como parâmetro no
-	// método incluir
-	private void adicionarAtributos(PreparedStatement stmt, Object[] atributos) throws SQLException {
-		int indice = 1;
-		for (Object atributo : atributos) {
-			if (atributo instanceof String) {
-				stmt.setString(indice, (String) atributo);
-			} else if (atributo instanceof Integer) {
-				stmt.setInt(indice, (Integer) atributo);
-			}
-			indice++;
+	// Método para fechar uma conexão com o banco de dados
+
+	public void close() {
+		try {
+			getConexao().close();
+		} catch (SQLException e) {
+
+		} finally {
+			conexao = null;
 		}
 	}
 }
