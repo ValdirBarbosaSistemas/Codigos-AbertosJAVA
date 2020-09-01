@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class FabricaConexao {
 	/*
-	 * Criação de um método estático na classe 'FabricaConexao' para que quando
+	 * Abaixo a Criação de um método estático na classe 'FabricaConexao' para que quando
 	 * sempre criar uma conexão ou algo do tipo, chamar o método em vez de ficar
 	 * sempre criando em uma classe
 	 */
