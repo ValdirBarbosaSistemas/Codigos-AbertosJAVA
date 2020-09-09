@@ -46,6 +46,7 @@ public class Foreach {
 
 	}
 
+	// Método estático
 	static void meuImprimir(String nome) {
 		System.out.println("Olá, meu nome é " + nome);
 	}

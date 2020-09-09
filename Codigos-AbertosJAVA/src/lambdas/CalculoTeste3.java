@@ -5,16 +5,19 @@ import java.util.function.BinaryOperator;
 public class CalculoTeste3 {
 	public static void main(String[] args) {
 		/*
-		 * Exemplo de Interface funcional 
-		 * Neste caso não se é necessário chamar a interface de nome Cálculo.
-		 * Como estamos trabalhando com Interface Funcional,
+		 * Exemplo de Interface funcional Neste caso não se é necessário chamar a
+		 * interface de nome Cálculo. Como estamos trabalhando com Interface Funcional,
 		 * basta colocarmos o nome do tipo da função. Ex. BinaryOperator.
 		 */
 
 		/*
-		 * O Java não permite esse tipo de conversão direta. 
-		 * Neste caso não se pode fazer int -> Double 
-		 * Neste caso aqui PODE SIM de double -> Double
+		 * O Java não permite esse tipo de conversão direta. Neste caso não se pode
+		 * fazer int -> Double Neste caso aqui PODE SIM de double -> Double
+		 */
+
+		/*
+		 * BinaryOperator é uma interface funcional que recebe um parâmetro x e retorna
+		 * o mesmo tipo que foi incluído. Ex: Recebe um double e retorna double
 		 */
 		BinaryOperator<Double> calc = (x, y) -> {
 			return x + y;
