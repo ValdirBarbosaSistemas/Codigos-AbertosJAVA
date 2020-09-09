@@ -8,7 +8,8 @@ public class OperadorUnario {
 		/*
 		 * No UnaryOperator, o tipo de parâmetro que voce passa é o tipo de retorno que
 		 * vai ser mostrado. E com ele voce pode fazer 'encadeamento' de várias chamadas
-		 * de função para ficar melhor a composição da função.
+		 * de função para ficar melhor a composição da função. Ou seja, ele tem como
+		 * parâmetro uma String e retorna uma String.
 		 */
 		UnaryOperator<Integer> maisDois = n -> n + 2;
 		UnaryOperator<Integer> vezesDois = n -> n * 2;

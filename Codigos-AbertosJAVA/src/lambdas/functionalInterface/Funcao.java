@@ -6,9 +6,9 @@ public class Funcao {
 	public static void main(String[] args) {
 
 		/*
-		 * Na interface funcional FUNCTION, ele é um 'Generics' que recebe como entrada
-		 * um Integer e retorna uma String. OBS2: Ele está sendo usado uma operação
-		 * ternária para dizer se é PAR ou ÍMPAR.
+		 * Na interface funcional FUNCTION, ele recebe como entrada um valor qualquer
+		 * como 'Integer' e retorna um valor qualquer como 'String'. OBS2: Abaixo ele
+		 * está sendo usado uma operação ternária para dizer se é PAR ou ÍMPAR.
 		 */
 		Function<Integer, String> parOuImpar = (numero) -> numero % 2 == 0 ? "Par" : "Impar";
 		System.out.println(parOuImpar.apply(33));

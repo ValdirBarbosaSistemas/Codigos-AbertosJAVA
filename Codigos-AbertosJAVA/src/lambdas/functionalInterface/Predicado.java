@@ -2,7 +2,7 @@ package lambdas.functionalInterface;
 
 import java.util.function.Predicate;
 
-//Predicate = Recebe um único valor e retorna VERDADEIRO OU FALSO (Boolean)
+//Predicate = Recebe um valor qualquer e retorna VERDADEIRO OU FALSO (Boolean)
 public class Predicado {
 	public static void main(String[] args) {
 		Predicate<Produto> isCaro = prod -> (prod.preco * (1 - prod.desconto)) >= 750;

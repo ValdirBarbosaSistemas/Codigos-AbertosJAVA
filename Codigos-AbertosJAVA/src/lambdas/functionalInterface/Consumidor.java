@@ -7,8 +7,8 @@ import java.util.function.Consumer;
 public class Consumidor {
 	public static void main(String[] args) {
 		/*
-		 * A interface funcional CONSUMER ela tem como entrada um único valor/parâmetro
-		 * e não retorna NADA
+		 * A interface funcional CONSUMER ela tem como entrada UM valor qualquer e não
+		 * retorna NADA
 		 */
 
 		// Abaixo, ele tá só imprimindo o nome.

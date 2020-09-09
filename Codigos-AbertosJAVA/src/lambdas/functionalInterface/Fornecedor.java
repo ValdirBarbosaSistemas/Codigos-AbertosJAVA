@@ -9,7 +9,7 @@ public class Fornecedor {
 
 		/*
 		 * Na interface funcional SUPPLIER voce pode colocar uma lista dentro dele. Ela
-		 * não recebe NENHUM parâmetros, mas lhe retorna algum valor.
+		 * não recebe NENHUM parâmetro, mas lhe retorna um valor qualquer.
 		 */
 		Supplier<List<String>> umaLista = () -> Arrays.asList("Bia", "Lia", "Gui");
 		System.out.println(umaLista.get()); // Para mostrar o conteúdo usa-se o 'get'
