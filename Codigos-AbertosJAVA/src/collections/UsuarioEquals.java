@@ -1,4 +1,4 @@
-package classe;
+package collections;
 
 public class UsuarioEquals {
 	String nome;

@@ -1,4 +1,4 @@
-package classe;
+package collections;
 
 public class Equals {
 	public static void main(String[] args) {
