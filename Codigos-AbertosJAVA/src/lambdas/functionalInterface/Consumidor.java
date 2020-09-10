@@ -27,6 +27,6 @@ public class Consumidor {
 		List<Produto> produtos = Arrays.asList(p1, p2);
 		produtos.forEach(imprimir); // Irá imprimir os nomes SEM USAR O ACCEPT
 		produtos.forEach(p -> System.out.println(p.preco)); // Usando Lambda
-		produtos.forEach(System.out::print); // Usando METHOD REFERENCE
+		produtos.forEach(System.out::print); // Usando METHOD REFERENCE ele irá imprimir OS PRODUTOS
 	}
 }
