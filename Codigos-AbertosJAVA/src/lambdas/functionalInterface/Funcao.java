@@ -7,8 +7,10 @@ public class Funcao {
 
 		/*
 		 * Na interface funcional FUNCTION, ele recebe como entrada um valor qualquer
-		 * como 'Integer' e retorna um valor qualquer como 'String'. OBS2: Abaixo ele
-		 * está sendo usado uma operação ternária para dizer se é PAR ou ÍMPAR.
+		 * como 'Integer' por exemplo e retorna um resultado qualquer como 'String' por
+		 * exemplo, ou seja, ele recebe um valor como entrada E UM resultado como saída.
+		 * OBS2: Abaixo ele está sendo usado uma operação ternária para dizer se é PAR
+		 * ou ÍMPAR.
 		 */
 		Function<Integer, String> parOuImpar = (numero) -> numero % 2 == 0 ? "Par" : "Impar";
 		System.out.println(parOuImpar.apply(33));
