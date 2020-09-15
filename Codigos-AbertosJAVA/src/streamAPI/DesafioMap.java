@@ -25,7 +25,7 @@ public class DesafioMap {
 		Function<String, Integer> binarioParaInt = s -> Integer.parseInt(s, 2);
 				
 		nums.stream() // Criação da Stream
-		.map(Integer::toBinaryString) // Operação intermediária
+		.map(Integer::toBinaryString) // Operação intermediária (Converter Inteiro para Binário)
 		.map(inverter) // Operação intermediária
 		.map(binarioParaInt) // Operação intermediária
 		.forEach(System.out::println); // Operação de terminação
