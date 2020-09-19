@@ -42,7 +42,7 @@ public class ChecadaVsNaoChecada {
 
 	/*
 	 * Neste caso aqui temos uma Exceção CHECADA, devido a palavra EXCEPTION, ou
-	 * seja no momento em que tem o EXCEPTION voce É OBRIGADO a colocar a palabra
+	 * seja no momento em que tem o EXCEPTION voce É OBRIGADO a colocar a palavra
 	 * THROW e também na assinatura do método colocar a palavra reservada 'THROWS'
 	 * no plural logo após dos parênteses, e também a classe 'Exception' pois se
 	 * voce não colocar, o sistema nem vai compilar o programa e ele não será

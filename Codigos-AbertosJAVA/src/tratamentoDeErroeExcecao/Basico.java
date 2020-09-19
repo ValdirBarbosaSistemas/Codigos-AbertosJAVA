@@ -15,8 +15,9 @@ public class Basico {
 		 * Sem o 'try/catch' daria um erro, que no caso seria 'NullPointerException', ou
 		 * seja, não foi inicializado nenhum valor ou o objeto não foi instanciado. E
 		 * pra isso é necessário usar o Try/Catch para poder tratar o erro. Para usá-lo,
-		 * é necessário dentro das chaves do try colocar a expressão ou valor do erro e
-		 * no catch colocar o tipo do erro e o nome da variável que irá ser colocada.
+		 * é necessário dentro das chaves do try colocar a expressão ou valor que voce
+		 * quer usar e no catch colocar o tipo do erro e o nome da variável que irá ser
+		 * colocada/usada dando abaixo a mensagem de erro que irá aparecer na tela.
 		 */
 
 		// Vai dar erro devido que nenhum número pode ser dividido por zero

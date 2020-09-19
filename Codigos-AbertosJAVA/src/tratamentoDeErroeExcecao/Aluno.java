@@ -13,6 +13,7 @@ public class Aluno {
 	}
 
 	// Método para ser usado no capítulo de Match 
+	@Override
 	public String toString() {
 		return nome + " tem a nota " + nota;
 	}
@@ -47,5 +48,4 @@ public class Aluno {
 			return false;
 		return true;
 	}
-
 }

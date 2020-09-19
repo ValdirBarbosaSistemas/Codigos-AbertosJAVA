@@ -8,6 +8,7 @@ public class NumeroNegativoException extends RuntimeException {
 		this.nomeDoAtributo = nomeDoAtributo;
 	}
 
+	@Override
 	public String getMessage() {
 		return String.format("O número %s é NEGATIVO", nomeDoAtributo);
 	}

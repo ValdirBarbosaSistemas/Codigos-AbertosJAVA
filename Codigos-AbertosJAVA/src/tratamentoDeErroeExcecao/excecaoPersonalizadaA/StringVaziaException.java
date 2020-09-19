@@ -14,6 +14,7 @@ public class StringVaziaException extends RuntimeException {
 		this.nomeDoAtributo = nomeDoAtributo;
 	}
 
+	@Override
 	public String getMessage() {
 		return String.format("O atributo %s está VAZIO", nomeDoAtributo);
 	}
