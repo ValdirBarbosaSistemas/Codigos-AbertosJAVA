@@ -19,6 +19,34 @@ public class DAO {
 	// Atributos
 	private Connection conexao;
 
+	// Método para criar uma conexao ao banco de dados
+
+	private Connection getConexao() {
+		try {
+
+			if (conexao != null && !conexao.isClosed()) {
+				return conexao;
+			}
+		} catch (SQLException e) {
+
+		}
+
+		conexao = FabricaConexao.getConexao();
+		return conexao;
+	}
+
+	// Método para fechar uma conexão com o banco de dados
+
+	public void close() {
+		try {
+			getConexao().close();
+		} catch (SQLException e) {
+
+		} finally {
+			conexao = null;
+		}
+	}
+
 	// Método para incluir os dados no banco
 
 	public int incluir(String sql, Object... atributos) { // OBS: estudar (VAR ARG)
@@ -51,8 +79,7 @@ public class DAO {
 		}
 	}
 
-	// Método para 'setar' cada um dos atributos que recebeu como parâmetro no
-	// método incluir
+	// Método para 'setar' cada um dos atributos que recebeu como parâmetro no método incluir
 	private void adicionarAtributos(PreparedStatement stmt, Object[] atributos) throws SQLException {
 		int indice = 1;
 		for (Object atributo : atributos) {
@@ -62,34 +89,6 @@ public class DAO {
 				stmt.setInt(indice, (Integer) atributo);
 			}
 			indice++;
-		}
-	}
-
-	// Método para criar uma conexao ao banco de dados
-
-	private Connection getConexao() {
-		try {
-
-			if (conexao != null && !conexao.isClosed()) {
-				return conexao;
-			}
-		} catch (SQLException e) {
-
-		}
-
-		conexao = FabricaConexao.getConexao();
-		return conexao;
-	}
-
-	// Método para fechar uma conexão com o banco de dados
-
-	public void close() {
-		try {
-			getConexao().close();
-		} catch (SQLException e) {
-
-		} finally {
-			conexao = null;
 		}
 	}
 }

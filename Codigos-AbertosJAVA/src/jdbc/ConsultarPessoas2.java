@@ -16,7 +16,7 @@ public class ConsultarPessoas2 {
 		String sql = "SELECT * FROM pessoas WHERE nome LIKE ?";
 		/*
 		 * O 'like' serve para consultar partes de um trecho de frase, ou seja, 
-		 * %val% ele irá pegar um trecho que contenha a parte 'vald' 
+		 * %val% ele irá pegar um trecho que contenha a parte 'val' 
 		 * Ma% caso queira pesquisar frase que COMEÇA com a palavra 'Ma' 
 		 * %al caso queira pesquisar frase que TERMINE com a palavra 'al'
 		 */
